@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GameSetupPage from "./pages/Lobby/GameSetupPage";
+import GameRoom from "./pages/GameRoom/GameRoom";
+import { GameProvider } from "./providers/GameContext";
 
-function App() {
+const startGame = (gameSetupInfo) => {
+  console.log("Game setup information:", gameSetupInfo);
+  // Add logic to update game data using the GameProvider
+};
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {/* Wrap your Routes with the GameProvider */}
+      <GameProvider>
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={<GameSetupPage startGame={startGame} />}
+          />
+          <Route path="/game" element={<GameRoom />} />
+        </Routes>
+      </GameProvider>
+    </Router>
   );
-}
+};
 
 export default App;

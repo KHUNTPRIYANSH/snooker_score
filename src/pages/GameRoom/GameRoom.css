@@ -1,0 +1,128 @@
+/* GameRoom.css */
+
+.game-room-container {
+    text-align: center;
+    /* margin: 20px; */
+}
+
+.score-display {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.player-score {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.move-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.game-over-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e6e6e6;
+    border-radius: 8px;
+}
+
+/* GameRoom.css */
+
+.game-room-container {
+    /* Add any other styling you need for the game room container */
+
+    /* Example background color for the game room */
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.score-display>* {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.score-display {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.player-score p {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.player-score {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    background-color: #fff;
+}
+
+.player-score.highlight {
+    /* Add any highlighting styles, for example, changing background color */
+    background-color: #c1e1c1;
+    /* Light green background */
+}
+
+.ball-ct {
+    margin: 15px 0;
+    border: 2px solid black;
+    border-radius: 11px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.move-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.ball-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 2px 15px 1px rgba(0, 0, 0, 0.3);
+}
+
+.ball-btn {
+    color: #fff !important;
+    border: 1px solid #ccc;
+    padding: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.game-over-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffd2d2;
+    /* Light red background */
+}
+
+.change-turn-btn {
+    width: 100% !important;
+    border-radius: 0px;
+    outline: none !important;
+    border: none;
+    padding: 20px !important;
+    /* margin: 20px; */
+    height: fit-content;
+}

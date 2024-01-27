@@ -7,14 +7,25 @@ body {
 }
 
 /* Game Setup Page styles */
+.game-setup-container>* {
+    width: 100%;
+    height: fit-content !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid #252525;
+    padding: 20px;
+}
 .game-setup-container {
-    max-width: 400px;
-    margin: 50px auto;
+    max-width: 100%;
+    padding: 20px;
+    height: 100vh;
+    /* height: 100vh; */
+    display: grid;
+    place-items: center;
+    /* margin: 50px auto; */
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .input-container {
@@ -27,4 +38,7 @@ body {
         max-width: 100%;
         padding: 15px;
     }
+}
+.ww-btn {
+    width: 100%;
 }

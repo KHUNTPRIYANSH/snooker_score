@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { useGameContext } from "../../providers/GameContext";
 import "./GameRoom.css"; // Import your CSS file for styling
 
@@ -9,6 +9,41 @@ const GameRoom = () => {
   const [currentPlayer, setCurrentPlayer] = useState(player1);
   const [scores, setScores] = useState({ [player1]: 0, [player2]: 0 });
   const [currentBall, setCurrentBall] = useState("red");
+  const [elapsedTime, setElapsedTime] = useState(0);
+const [startTime, setStartTime] = useState(null);
+    useEffect(() => {
+    // Start the timer when the component mounts
+    setStartTime(Date.now());
+
+    // Clear the timer when the component unmounts
+    return () => {
+      setStartTime(null);
+    };
+  }, []);
+  useEffect(() => {
+  // Update elapsed time every second
+  const intervalId = setInterval(() => {
+    if (startTime) {
+      const currentTime = Date.now();
+      const secondsElapsed = Math.floor((currentTime - startTime) / 1000);
+
+      // Calculate hours, minutes, and remaining seconds
+      const hours = Math.floor(secondsElapsed / 3600);
+      const minutes = Math.floor((secondsElapsed % 3600) / 60);
+      const seconds = secondsElapsed % 60;
+
+      // Format the time
+      const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+      setElapsedTime(formattedTime);
+    }
+  }, 1000);
+
+  // Clear the interval when the component unmounts
+  return () => {
+    clearInterval(intervalId);
+  };
+}, [startTime]);
 
   // Define point values for each colored ball and their background colors
   const ballInfo = {
@@ -47,7 +82,7 @@ const GameRoom = () => {
       setCurrentPlayer(currentPlayer === player1 ? player2 : player1);
       setCurrentBall("red"); // Reset to red ball after changing turn
     } else if (currentBall === "colored" && ball !== "red") {
-      // If a colored ball is potted, stay in the colored phase
+      setCurrentBall("red");
       // Do not switch back to red
     }
   };
@@ -106,33 +141,32 @@ const GameRoom = () => {
     const availableBalls = getAvailableBalls(ballType);
 
     return availableBalls.map((ball) => (
-      <button
-        key={ball}
-        onClick={() =>
-          ball === "foul"
-            ? handleFoul()
-            : ball === "changeTurn"
-            ? handleChangeTurn()
-            : handlePlayerMove(ball)
-        }
-        className={`ball-btn ${ball === "changeTurn" ? "change-turn-btn" : ""}`}
-        style={{
-          backgroundColor:
-            ball === "foul"
-              ? "gray"
-              : ball === "changeTurn"
-              ? "purple"
-              : ballInfo[ball].color,
-        }}
-      >
-        {ball === "foul"
-          ? "Foul (-4 points)"
-          : ball === "changeTurn"
-          ? "Change Turn"
-          : `${ball.charAt(0).toUpperCase() + ball.slice(1)} Ball (${
-              ballInfo[ball].points
-            } points)`}
-      </button>
+     <button
+  key={ball}
+  onClick={() =>
+    ball === "foul"
+      ? handleFoul()
+      : ball === "changeTurn"
+      ? handleChangeTurn()
+      : handlePlayerMove(ball)
+  }
+  className={`ball-btn ${ball === "changeTurn" ? "change-turn-btn" : ""}`}
+  style={{
+    background: ball === "foul"
+      ? "linear-gradient(45deg, rgba(255, 255, 255, 0.5) , gray , gray , rgba(0, 0, 0, 0.25))"
+      : ball === "changeTurn"
+      ? " linear-gradient(to right, #0052d4, #4364f7, #6fb1fc)"
+      : `linear-gradient(30deg, rgba(255, 255, 255, 0.6)  , ${ballInfo[ball].color} , ${ballInfo[ball].color}) `,
+    
+  }}
+>
+  {ball === "foul"
+    ? "Foul (-4 points)"
+    : ball === "changeTurn"
+    ? "Change Turn"
+    : `${ball.charAt(0).toUpperCase() + ball.slice(1)} Ball (${ballInfo[ball].points} points)`}
+</button>
+
     ));
   };
 
@@ -146,8 +180,10 @@ const GameRoom = () => {
 
   return (
     <div className="game-room-container">
-      <h2>Game Room</h2>
-
+   <header>
+        Game Room
+        <div className="time">Time: {elapsedTime} </div>
+      </header>
       {/* Score Display */}
       <div className="score-display">
         <div
@@ -156,7 +192,7 @@ const GameRoom = () => {
           }`}
         >
           <p>{player1}</p>
-          <p>Score: {scores[player1]}</p>
+          <big>{scores[player1]}</big>
         </div>
         <div
           className={`player-score ${
@@ -164,7 +200,7 @@ const GameRoom = () => {
           }`}
         >
           <p>{player2}</p>
-          <p>Score: {scores[player2]}</p>
+          <big>{scores[player2]}</big>
         </div>
     
       </div>

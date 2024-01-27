@@ -1,8 +1,16 @@
 /* GameRoom.css */
 
 .game-room-container {
+    background: #536976;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #292E49, #536976);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #292E49, #536976);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    /* background-color: red !important; */
     text-align: center;
-    /* margin: 20px; */
+    min-height: 100vh;
 }
 
 .score-display {
@@ -77,10 +85,11 @@
 
 .ball-ct {
     margin: 15px 0;
-    border: 2px solid black;
+    /* border: 1px solid rgb(227, 227, 227); */
     border-radius: 11px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    background: #4b4b4b60;
 }
 
 .move-buttons {
@@ -98,17 +107,25 @@
 
 .ball-btn {
     color: #fff !important;
-    border: 1px solid #ccc;
+    border: none;
     padding: 30px;
     border-radius: 50%;
     cursor: pointer;
+    outline: none !important;
     width: 150px;
     height: 150px;
     font-size: 1rem;
     font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2),
+    0 0 10px rgba(255, 255, 255, 0.2) inset;
+    /* background: linear-gradient(45deg, #ffffff44, #ddd); */
     transition: all 0.2s ease-in-out;
 }
+/* 
+.ball-btn:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1),
+        0 0 30px rgba(255, 255, 255, 0.9) inset;
+} */
 
 .game-over-message {
     margin-top: 20px;
@@ -123,6 +140,32 @@
     outline: none !important;
     border: none;
     padding: 20px !important;
-    /* margin: 20px; */
+    margin-top: 20px;
     height: fit-content;
+}
+.hidden {
+    display: none;
+}
+
+.score-display big {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 7.5px 0;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    padding: 7.5px 0;
+    margin-bottom: 25px;
+}
+
+.score-display p {
+    font-size: 1.1rem;
+    font-weight: 500;
 }

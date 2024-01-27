@@ -43,19 +43,21 @@ const GameSetupPage = ({ startGame }) => {
 
   return (
     <div className="game-setup-container">
+      <div>
+
       <h2>Game Setup</h2>
       <Form>
         <Form.Group className="mb-3" controlId="player1Name">
-          <Form.Label>Player 1 Name</Form.Label>
+          {/* <Form.Label>Player 1 Name</Form.Label> */}
           <Form.Control type="text" placeholder="Enter Player 1 Name" value={player1} onChange={(e) => setPlayer1(e.target.value)} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="player2Name">
-          <Form.Label>Player 2 Name</Form.Label>
+          {/* <Form.Label>Player 2 Name</Form.Label> */}
           <Form.Control type="text" placeholder="Enter Player 2 Name" value={player2} onChange={(e) => setPlayer2(e.target.value)} />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="totalPoints">
+        {/* <Form.Group className="mb-3" controlId="totalPoints">
           <Form.Label>Total Points</Form.Label>
           <Form.Control type="number" placeholder="Enter Total Points" value={totalPoints} onChange={(e) => setTotalPoints(parseInt(e.target.value, 10))} />
         </Form.Group>
@@ -66,11 +68,12 @@ const GameSetupPage = ({ startGame }) => {
             <option value="standard">Standard Snooker</option>
             <option value="9-ball">9-Ball Snooker</option>
           </Form.Control>
-        </Form.Group>
-        <Button variant="primary" onClick={handleStartGame}>
+        </Form.Group> */}
+        <Button variant="primary" className='ww-btn' onClick={handleStartGame}>
           Start Game
         </Button>
       </Form>
+      </div>
     </div>
   );
 };

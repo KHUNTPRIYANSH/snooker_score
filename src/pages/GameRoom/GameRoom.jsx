@@ -48,12 +48,12 @@ const [startTime, setStartTime] = useState(null);
   // Define point values for each colored ball and their background colors
   const ballInfo = {
     red: { points: 1, color: "red" },
-    yellow: { points: 2, color: "gold" },
+    yellow: { points: 2, color: "rgb(241, 206, 6)" },
     green: { points: 3, color: "green" },
-    brown: { points: 4, color: "brown" },
+    brown: { points: 4, color: "rgb(47, 25, 14)" },
     blue: { points: 5, color: "blue" },
-    pink: { points: 6, color: "pink" },
-    black: { points: 7, color: "black" },
+    pink: { points: 6, color: "rgb(252, 78, 217)" },
+    black: { points: 7, color: "#000" },
     foul: { points: -4, color: "gray" },
   };
 
@@ -153,18 +153,21 @@ const [startTime, setStartTime] = useState(null);
   className={`ball-btn ${ball === "changeTurn" ? "change-turn-btn" : ""}`}
   style={{
     background: ball === "foul"
-      ? "linear-gradient(45deg, rgba(255, 255, 255, 0.5) , gray , gray , rgba(0, 0, 0, 0.25))"
+      ? "linear-gradient(45deg, rgba(255, 255, 255, 0.3) , gray , gray , rgba(0, 0, 0, 0.25))"
       : ball === "changeTurn"
-      ? " linear-gradient(to right, #0052d4, #4364f7, #6fb1fc)"
-      : `linear-gradient(30deg, rgba(255, 255, 255, 0.6)  , ${ballInfo[ball].color} , ${ballInfo[ball].color}) `,
+      ? " linear-gradient(to right, #7b4397, #dc2430)"
+      : `linear-gradient(30deg, rgba(255, 255, 255, 0.3)  , ${ballInfo[ball].color} , ${ballInfo[ball].color}) `,
     
   }}
 >
   {ball === "foul"
-    ? "Foul (-4 points)"
+    ? "Foul"
     : ball === "changeTurn"
     ? "Change Turn"
-    : `${ball.charAt(0).toUpperCase() + ball.slice(1)} Ball (${ballInfo[ball].points} points)`}
+    : `
+    ${ballInfo[ball].points}`}
+    {/* ${ball.charAt(0).toUpperCase() + ball.slice(1)} */}
+<img src="./imgs/bt2.png" className="bt" alt="" />
 </button>
 
     ));

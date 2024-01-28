@@ -43,17 +43,20 @@ const GameSetupPage = ({ startGame }) => {
 
   return (
     <div className="game-setup-container">
-      <div>
+      <div id='box-w-lb'>
 
-      <h2>Game Setup</h2>
+      <h1>Hemlo!</h1>
+      <h3>
+        Track your snooker game scores.
+      </h3>
       <Form>
         <Form.Group className="mb-3" controlId="player1Name">
-          {/* <Form.Label>Player 1 Name</Form.Label> */}
+          <Form.Label>Player 1</Form.Label>
           <Form.Control type="text" placeholder="Enter Player 1 Name" value={player1} onChange={(e) => setPlayer1(e.target.value)} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="player2Name">
-          {/* <Form.Label>Player 2 Name</Form.Label> */}
+          <Form.Label>Player 2</Form.Label>
           <Form.Control type="text" placeholder="Enter Player 2 Name" value={player2} onChange={(e) => setPlayer2(e.target.value)} />
         </Form.Group>
 

@@ -1,28 +1,33 @@
 /* GameRoom.css */
 
 .game-room-container {
-    background: #536976;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #292E49, #536976);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #292E49, #536976);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    /* background-color: red !important; */
+ /* background: linear-gradient(to top, #292E49, #536976); */
+ /* background: linear-gradient(to bottom, #004e92, #000428); */
+ /* background: linear-gradient(to top, #360033, #0b8793); */
+ /* background-color: red !important; 
+ */
+ background:linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), black),
+ url('https://i.pinimg.com/564x/40/bc/09/40bc094a2610ca3ab305487a0b8c47cf.jpg');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
     text-align: center;
-    min-height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
 }
 
 .score-display {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
+    border-radius: 7px;
+    overflow: hidden;
 }
 
 .player-score {
     background-color: #f0f0f0;
     padding: 10px;
-    border-radius: 8px;
+    /* border-radius: 8px; */
 }
 
 .move-buttons {
@@ -59,6 +64,7 @@
 }
 
 .score-display {
+    /* gap: 10px; */
     display: flex;
     justify-content: space-between;
 
@@ -72,14 +78,13 @@
 .player-score {
     text-align: center;
     padding: 10px;
-    border: 1px solid #ccc;
-    margin: 5px;
+    /* border: 1px solid #ccc; */
     background-color: #fff;
 }
 
 .player-score.highlight {
     /* Add any highlighting styles, for example, changing background color */
-    background-color: #c1e1c1;
+    background-color: #97e46a;
     /* Light green background */
 }
 
@@ -87,9 +92,9 @@
     margin: 15px 0;
     /* border: 1px solid rgb(227, 227, 227); */
     border-radius: 11px;
-    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 12px 1px rgba(7, 7, 7, 0.5);
     overflow: hidden;
-    background: #4b4b4b60;
+    background: #40404034;
 }
 
 .move-buttons {
@@ -109,14 +114,15 @@
     color: #fff !important;
     border: none;
     padding: 30px;
+    position: relative;
     border-radius: 50%;
     cursor: pointer;
     outline: none !important;
-    width: 150px;
-    height: 150px;
-    font-size: 1rem;
+    width: 100px;
+    height: 100px;
+    font-size: 1.3rem;
     font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2),
+    box-shadow: 1px 7px 5px rgba(0, 0, 0, 0.3),
     0 0 10px rgba(255, 255, 255, 0.2) inset;
     /* background: linear-gradient(45deg, #ffffff44, #ddd); */
     transition: all 0.2s ease-in-out;
@@ -134,13 +140,18 @@
     /* Light red background */
 }
 
+.change-turn-btn .bt {
+    display: none;
+}
 .change-turn-btn {
     width: 100% !important;
     border-radius: 0px;
     outline: none !important;
     border: none;
+    font-size: 1.2rem;
     padding: 20px !important;
     margin-top: 20px;
+    padding: 12px !important;
     height: fit-content;
 }
 .hidden {
@@ -168,4 +179,13 @@ header {
 .score-display p {
     font-size: 1.1rem;
     font-weight: 500;
+}
+.ball-btn .bt {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100px;
+    width: 100px;
+    mix-blend-mode: soft-light;
+    /* color: rgb(47, 25, 14); */
 }

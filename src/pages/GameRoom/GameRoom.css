@@ -189,3 +189,45 @@ header {
     mix-blend-mode: soft-light;
     /* color: rgb(47, 25, 14); */
 }
+.foul-modal h3 {
+    font-size: 1.2rem !important;
+    /* margin-bottom: 25px; */
+}
+
+.foul-modal {
+    /* padding-top: 25px; */
+    background: rgb(255, 255, 255);
+    top: 50%;
+    left: 50%;
+    border-radius: 12px;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 80%;
+}
+
+.fl-hdr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    /* margin-bottom: 25px; */
+}
+
+.close-btn {
+    border: none !important;
+    outline: none !important;
+    height: 25px;
+    width: 25px;
+    display: grid;
+    border-radius: 50%;
+    place-items: center;
+    /* padding: 8px; */
+    background: crimson;
+    font-size: 0.8rem;
+    cursor: pointer;
+    /* width: 25%; */
+    color: #fff;
+
+}

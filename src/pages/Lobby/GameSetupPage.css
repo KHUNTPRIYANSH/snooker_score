@@ -57,3 +57,40 @@ body {
     background:#6D31EDFF;
     padding: 12.5px;
 }
+.foul-modal {
+    background: #fff;
+    color: #252525;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.fls>* {
+    width: 50%;
+    /* flex: 1; */
+    padding: 12.5px;
+    outline: none;
+    border: none;
+    color: #fff;
+}
+
+.fls {
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+}
+
+.fl-4 {
+    background: gray;
+}
+
+.fl-5 {
+    background: rgb(52, 52, 255);
+}
+
+.fl-6 {
+    background: rgb(213, 55, 192);
+}
+
+.fl-7 {
+    background: rgb(22, 22, 22);
+}

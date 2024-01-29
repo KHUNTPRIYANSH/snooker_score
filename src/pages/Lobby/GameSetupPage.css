@@ -29,7 +29,7 @@ body {
 .game-setup-container {
     max-width: 550px;
     width: 100% !important;
-    height: 100dvh;
+    height: 100vh;
     overflow: scroll;
     display: flex;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent, black),

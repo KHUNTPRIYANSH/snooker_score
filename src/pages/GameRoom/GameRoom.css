@@ -13,7 +13,7 @@
  background-repeat: no-repeat;
     text-align: center;
     width: 100% !important;
-    height: 100dvh;
+    height: 100vh !important;
     overflow: hidden;
 }
 

@@ -95,6 +95,7 @@
     box-shadow: 0 0px 12px 1px rgba(7, 7, 7, 0.5);
     overflow: hidden;
     background: #40404034;
+    backdrop-filter: blur(10px);
 }
 
 .move-buttons {

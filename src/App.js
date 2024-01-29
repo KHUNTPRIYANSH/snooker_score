@@ -11,19 +11,21 @@ const startGame = (gameSetupInfo) => {
 
 const App = () => {
   return (
-    <Router>
-      {/* Wrap your Routes with the GameProvider */}
-      <GameProvider>
-        <Routes>
-          <Route
-            path="/"
-            exact
-            element={<GameSetupPage startGame={startGame} />}
-          />
-          <Route path="/game" element={<GameRoom />} />
-        </Routes>
-      </GameProvider>
-    </Router>
+    <div className="main">
+      <Router>
+        {/* Wrap your Routes with the GameProvider */}
+        <GameProvider>
+          <Routes>
+            <Route
+              path="/"
+              exact
+              element={<GameSetupPage startGame={startGame} />}
+            />
+            <Route path="/game" element={<GameRoom />} />
+          </Routes>
+        </GameProvider>
+      </Router>
+    </div>
   );
 };
 

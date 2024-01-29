@@ -28,7 +28,7 @@ body {
 }
 .game-setup-container {
     max-width: 550px;
-    width: 100%;
+    width: 100% !important;
     height: 100dvh;
     overflow: scroll;
     display: flex;
@@ -101,4 +101,5 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
 }

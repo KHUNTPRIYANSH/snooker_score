@@ -12,6 +12,7 @@
  background-position: center;
  background-repeat: no-repeat;
     text-align: center;
+    width: 100% !important;
     height: 100dvh;
     overflow: hidden;
 }
